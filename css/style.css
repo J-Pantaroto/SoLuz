@@ -91,6 +91,8 @@ section {
     align-items: center;
     text-align: center;
     padding: 20px;
+    animation: fadeBackground 1.5s ease-in-out;
+    background-attachment: fixed;
 }
 
 .hero h1 {
@@ -114,6 +116,11 @@ section {
 
 .hero .btn:hover {
     background-color: #e67e00;
+}
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
 }
 
 /* ==============================
@@ -179,6 +186,8 @@ section {
 
 .btn:hover {
     transform: scale(1.05);
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+
 }
 
 /* ==============================
@@ -189,6 +198,7 @@ footer {
     color: var(--white);
     padding: 20px 0;
     text-align: center;
+    height: 100%;
 }
 
 @media (max-width: 768px) {
@@ -216,6 +226,7 @@ h1, h2 {
     animation: fadeIn 1s ease-in-out;
 }
 
+
 /* Imagens adaptáveis */
 .img-fluid {
     max-width: 100%;
@@ -227,6 +238,13 @@ h1, h2 {
     max-width: 500px;
     margin: auto;
 }
+.img-zoom {
+    transition: transform 0.4s ease-in-out;
+}
+
+.img-zoom:hover {
+    transform: scale(1.08);
+}
 
 /* Ajustes para telas menores */
 @media (max-width: 768px) {
@@ -235,3 +253,91 @@ h1, h2 {
     }
 }
 
+
+/* Seção de Contato */
+#contact {
+    background-color: var(--white);
+    padding: 60px 0;
+}
+
+#contact p {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+/* Estilizando Botões */
+.btn {
+    padding: 12px 20px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.btn i {
+    font-size: 1.3rem;
+}
+
+/* Botão do WhatsApp */
+.btn-success {
+    background-color: #25D366;
+    border: none;
+}
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transition: all 0.4s ease-in-out;
+    transform: translate(-50%, -50%) scale(0);
+    border-radius: 50%;
+}
+.btn:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.btn-success:hover {
+    background-color: #1EBE5D;
+}
+
+/* Botão de E-mail */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+}
+
+.btn-primary:hover {
+    background-color: #003580;
+}
+
+
+/* Seção Quem Somos */
+#about {
+    background-color: var(--light-gray);
+    padding: 60px 0;
+}
+
+#about h2 {
+    color: var(--primary-color);
+}
+
+#about p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+/* Ajuste das imagens */
+#about img {
+    border-radius: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de zoom na imagem ao passar o mouse */
+#about img:hover {
+    transform: scale(1.05);
+}
